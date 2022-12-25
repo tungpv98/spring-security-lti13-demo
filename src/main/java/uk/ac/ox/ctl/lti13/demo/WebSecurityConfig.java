@@ -14,7 +14,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/", "/resources/**", "/favicon.ico", "/config.json", "/.well-known/jwks.json")
-                .permitAll()
+                .authenticated()
                 ;
         Lti13Configurer lti13Configurer = new Lti13Configurer();
         http.apply(lti13Configurer);
