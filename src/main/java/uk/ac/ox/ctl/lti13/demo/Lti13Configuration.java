@@ -69,7 +69,7 @@ public class Lti13Configuration {
             resource = new FileUrlResource(location);
             if (resource.exists()) {
                 KeyStoreKeyFactory ksFactory = new KeyStoreKeyFactory(resource, storePassword.toCharArray());
-                log.info("Loaded key from "+ location);
+                log.info("Loaded key from " + location);
                 return ksFactory.getKeyPair("jwt");
             } else {
                 log.info("Generated a keypair, this shouldn't be used in production.");
